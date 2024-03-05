@@ -98,9 +98,8 @@ searchBtnEl.addEventListener("click", () => {
 //This funciton uses the location to make a request for the weather data information
 async function getWeatherData(latitude, longitude) {
     const options = { method: 'GET', headers: { accept: 'application/json' } };
-    const API_KEY = "X8y35k4ZzjO7cN2uq2RcQq0fIV5aDfEg";
 
-    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${latitude},${longitude}&timesteps=1d&apikey=${API_KEY}&units=imperial`, options)
+    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${latitude},${longitude}&timesteps=1d&apikey=${config.API_KEY}&units=imperial`, options)
         .then(response => response.json())
         .then(data => {
             console.log(data);

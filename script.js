@@ -51,11 +51,10 @@ geoBtnEl.addEventListener("click", () => {
 });
 
 //This function is called when the user enters the address
-async function searchLocation(city) {
-    const accessKey = "c17962eee98d4d4db30cd4aa015e5a1c";
+async function searchLocation(city) {;
     let address = city;
 
-    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${accessKey}&pretty=1`)
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${config.ACCESS_KEY}&pretty=1`)
         .then(response => response.json())
         .then(data => {
             if (data.results.length > 0) {

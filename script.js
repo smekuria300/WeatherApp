@@ -1,4 +1,6 @@
 //Declearation of variables
+require('dotenv').config()
+
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const currentWeatherItemsEl = document.getElementById('current-weather-items');
@@ -54,7 +56,7 @@ geoBtnEl.addEventListener("click", () => {
 async function searchLocation(city) {;
     let address = city;
 
-    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${env.ACCESS_KEY}&pretty=1`)
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${process.env.ACCESS_KEY}&pretty=1`)
         .then(response => response.json())
         .then(data => {
             if (data.results.length > 0) {
@@ -98,7 +100,7 @@ searchBtnEl.addEventListener("click", () => {
 async function getWeatherData(latitude, longitude) {
     const options = { method: 'GET', headers: { accept: 'application/json' } };
 
-    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${latitude},${longitude}&timesteps=1d&apikey=${env.API_KEY}&units=imperial`, options)
+    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${latitude},${longitude}&timesteps=1d&apikey=${process.env.API_KEY}&units=imperial`, options)
         .then(response => response.json())
         .then(data => {
             console.log(data);

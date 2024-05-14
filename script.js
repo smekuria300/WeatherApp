@@ -1,6 +1,4 @@
 //Declearation of variables
-require('dotenv').config()
-
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const currentWeatherItemsEl = document.getElementById('current-weather-items');

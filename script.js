@@ -52,9 +52,10 @@ geoBtnEl.addEventListener("click", () => {
 
 //This function is called when the user enters the address
 async function searchLocation(city) {;
+    const ACCESS_KEY = process.env.ACCESS_KEY;
     let address = city;
 
-    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${process.env.ACCESS_KEY}&pretty=1`)
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${ACCESS_KEY}&pretty=1`)
         .then(response => response.json())
         .then(data => {
             if (data.results.length > 0) {
@@ -96,9 +97,10 @@ searchBtnEl.addEventListener("click", () => {
 
 //This funciton uses the location to make a request for the weather data information
 async function getWeatherData(latitude, longitude) {
+    const API_KEY = process.env.API_KEY;
     const options = { method: 'GET', headers: { accept: 'application/json' } };
 
-    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${latitude},${longitude}&timesteps=1d&apikey=${process.env.API_KEY}&units=imperial`, options)
+    fetch(`https://api.tomorrow.io/v4/weather/forecast?location=${latitude},${longitude}&timesteps=1d&apikey=${API_KEY}&units=imperial`, options)
         .then(response => response.json())
         .then(data => {
             console.log(data);

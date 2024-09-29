@@ -5,7 +5,7 @@
 </p>
 
 <h2>Features</h2>
-<ul>.
+<ul>
   <li>Displays a 6-day weather forecast for a given city or location provided by tommrow.io API.</li>
   <li>Provides detailed information such as temperature, weather conditions, and wind speed</li>
   <li>Auto-complete location search using OpenCageData geocoding API.</li>

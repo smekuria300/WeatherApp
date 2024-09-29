@@ -31,7 +31,8 @@
   <li>From there you will go to the script.js file and add your API code to the API_KEY variable.</li>
 </ol>
 
-<H2>Done!</H2>
+<h2>Running the App</h2>
+<p>You will also have to use the <a href = "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"> live server extension</a> in visual code to locally run the server.Once the app is running, you can access it by going to the address http://localhost:5550 and http://127.0.0.1:5550.Enter the name of a city in the search bar, and the 6-day forecast for the appropriate location will be displayed.</p>
 
 
 
